@@ -35,6 +35,15 @@ main div button {
 main div button:hover {
   background-color: aquamarine;
 }
-main img {
-  width: auto;
+@media (max-width: 426px) {
+  h1 {
+    font-size: large;
+  }
+  h2 {
+    text-align: center;
+    font-size: medium;
+  }
+  main img {
+    width: 70%;
+  }
 }
