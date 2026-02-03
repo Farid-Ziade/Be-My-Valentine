@@ -4,10 +4,15 @@
   box-sizing: border-box;
 }
 
+html {
+  height: 100%;
+}
+
 body {
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 100vh;
   background-color: grey;
   color: white;
 }
@@ -17,7 +22,7 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 5vh;
+  gap: 1.5rem;
 }
 
 main div {
@@ -27,23 +32,73 @@ main div {
   align-items: center;
 }
 main div button {
-  padding: 1.5vw 3vw;
+  padding: 1rem 2rem;
   color: black;
   cursor: pointer;
-  border: 10px;
+  border: none;
+  border-radius: 6px;
 }
 main div button:hover {
   background-color: aquamarine;
 }
-@media (max-width: 426px) {
+
+/* Base image sizing */
+main img {
+  max-width: 60%;
+  height: auto;
+  display: block;
+}
+
+/* Small phones */
+@media (max-width: 425px) {
   h1 {
-    font-size: large;
-  }
-  h2 {
+    font-size: 1.4rem;
     text-align: center;
-    font-size: medium;
+    padding: 0 0.5rem;
+  }
+  main {
+    gap: 1rem;
+    width: 100%;
   }
   main img {
-    width: 70%;
+    max-width: 80%;
+  }
+  main div {
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 0 1rem;
+  }
+  main div button {
+    width: 100%;
+    padding: 0.8rem 1rem;
+  }
+}
+
+/* Small tablets / large phones */
+@media (min-width: 426px) and (max-width: 767px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+  main img {
+    max-width: 60%;
+  }
+  main div button {
+    padding: 1rem 1.5rem;
+  }
+}
+
+/* Desktop and up */
+@media (min-width: 768px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+  main img {
+    max-width: 40%;
+  }
+  main div {
+    flex-direction: row;
+  }
+  main div button {
+    padding: 1.2rem 2rem;
   }
 }
